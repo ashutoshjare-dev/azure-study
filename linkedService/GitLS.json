@@ -1,0 +1,12 @@
+{
+	"name": "GitLS",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://raw.githubusercontent.com/ashutoshjare-dev/azure-study/refs/heads/ADF-Dataset/marketing.csv?token=GHSAT0AAAAAADJKSRKBIKXTOLRIN4BQZGW62FAQOEA",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
