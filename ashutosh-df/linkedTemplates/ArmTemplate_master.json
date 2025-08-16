@@ -1,0 +1,112 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ashutosh-df"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"Link_Source_Container_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Link_Source_Container'"
+		},
+		"LsAzureFunction_functionKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'functionKey' of 'LsAzureFunction'"
+		},
+		"ls_adls_dataeng_learning_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls_dataeng_learning'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ashutosh1632.dfs.core.windows.net/"
+		},
+		"LsAzureFunction_properties_typeProperties_functionAppUrl": {
+			"type": "string",
+			"defaultValue": "https://capstone-function-ashutosh.azurewebsites.net"
+		},
+		"ProcessData_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://capstone-function-ashutosh.azurewebsites.net/api/ProcessData?"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://capstone-function-ashutosh.azurewebsites.net/api/ProcessData?"
+		},
+		"ls_adls_dataeng_learning_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ashutosh1sa.dfs.core.windows.net/"
+		},
+		"on_blob_update_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/370cc14c-bf3b-4453-a20b-6fdb0f130e48/resourceGroups/RG/providers/Microsoft.Storage/storageAccounts/ashutosh1sa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ashutosh-df_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"Link_Source_Container_connectionString": {
+						"value": "[parameters('Link_Source_Container_connectionString')]"
+					},
+					"LsAzureFunction_functionKey": {
+						"value": "[parameters('LsAzureFunction_functionKey')]"
+					},
+					"ls_adls_dataeng_learning_accountKey": {
+						"value": "[parameters('ls_adls_dataeng_learning_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LsAzureFunction_properties_typeProperties_functionAppUrl": {
+						"value": "[parameters('LsAzureFunction_properties_typeProperties_functionAppUrl')]"
+					},
+					"ProcessData_properties_typeProperties_url": {
+						"value": "[parameters('ProcessData_properties_typeProperties_url')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"ls_adls_dataeng_learning_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_dataeng_learning_properties_typeProperties_url')]"
+					},
+					"on_blob_update_properties_typeProperties_scope": {
+						"value": "[parameters('on_blob_update_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

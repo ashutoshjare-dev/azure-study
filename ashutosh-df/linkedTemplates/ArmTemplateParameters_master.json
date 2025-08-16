@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ashutosh-df"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"Link_Source_Container_connectionString": {
+			"value": ""
+		},
+		"LsAzureFunction_functionKey": {
+			"value": ""
+		},
+		"ls_adls_dataeng_learning_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://ashutosh1632.dfs.core.windows.net/"
+		},
+		"LsAzureFunction_properties_typeProperties_functionAppUrl": {
+			"value": "https://capstone-function-ashutosh.azurewebsites.net"
+		},
+		"ProcessData_properties_typeProperties_url": {
+			"value": "https://capstone-function-ashutosh.azurewebsites.net/api/ProcessData?"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://capstone-function-ashutosh.azurewebsites.net/api/ProcessData?"
+		},
+		"ls_adls_dataeng_learning_properties_typeProperties_url": {
+			"value": "https://ashutosh1sa.dfs.core.windows.net/"
+		},
+		"on_blob_update_properties_typeProperties_scope": {
+			"value": "/subscriptions/370cc14c-bf3b-4453-a20b-6fdb0f130e48/resourceGroups/RG/providers/Microsoft.Storage/storageAccounts/ashutosh1sa"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
