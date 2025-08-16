@@ -1,0 +1,61 @@
+{
+	"name": "DS_Sink_JsonResponse_to_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_dataeng_learning",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "abc.csv",
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "customer_id",
+				"type": "String"
+			},
+			{
+				"name": "first_name",
+				"type": "String"
+			},
+			{
+				"name": "last_name",
+				"type": "String"
+			},
+			{
+				"name": "phone",
+				"type": "String"
+			},
+			{
+				"name": "email",
+				"type": "String"
+			},
+			{
+				"name": "street",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "state",
+				"type": "String"
+			},
+			{
+				"name": "zip_code",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

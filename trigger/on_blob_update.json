@@ -1,0 +1,25 @@
+{
+	"name": "on_blob_update",
+	"properties": {
+		"description": "When csv files with order's data are added in the blob, this trigger will execute the pipeline.",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pp_orders_copy_merge_delete_multiple_files",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/source/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/370cc14c-bf3b-4453-a20b-6fdb0f130e48/resourceGroups/RG/providers/Microsoft.Storage/storageAccounts/ashutosh1sa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

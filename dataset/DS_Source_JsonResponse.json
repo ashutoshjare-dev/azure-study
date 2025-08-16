@@ -1,0 +1,49 @@
+{
+	"name": "DS_Source_JsonResponse",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ProcessData",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"customer_id": {
+					"type": "string"
+				},
+				"first_name": {
+					"type": "string"
+				},
+				"last_name": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"zip_code": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

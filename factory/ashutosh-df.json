@@ -1,0 +1,9 @@
+{
+	"name": "ashutosh-df",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cfdc16b2-2abd-48a7-8a0e-363bb6717e70",
+		"tenantId": "33ee3eb8-88f6-4d3a-8bc4-d26e66b86be2"
+	}
+}

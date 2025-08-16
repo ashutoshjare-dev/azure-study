@@ -1,0 +1,13 @@
+{
+	"name": "RestService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://capstone-function-ashutosh.azurewebsites.net/api/ProcessData?",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
