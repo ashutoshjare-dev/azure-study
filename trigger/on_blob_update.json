@@ -4,14 +4,7 @@
 		"description": "When csv files with order's data are added in the blob, this trigger will execute the pipeline.",
 		"annotations": [],
 		"runtimeState": "Stopped",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "pp_orders_copy_merge_delete_multiple_files",
-					"type": "PipelineReference"
-				}
-			}
-		],
+		"pipelines": [],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
 			"blobPathBeginsWith": "/source/blobs/",
