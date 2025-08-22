@@ -3,7 +3,7 @@
 	"properties": {
 		"description": "When csv files with order's data are added in the blob, this trigger will execute the pipeline.",
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
