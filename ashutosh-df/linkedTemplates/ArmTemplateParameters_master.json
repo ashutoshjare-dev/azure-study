@@ -20,6 +20,9 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://ashutosh1632.dfs.core.windows.net/"
 		},
+		"GitLS_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
 		"LsAzureFunction_properties_typeProperties_functionAppUrl": {
 			"value": "https://capstone-function-ashutosh.azurewebsites.net"
 		},

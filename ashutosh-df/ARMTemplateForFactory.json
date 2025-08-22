@@ -27,6 +27,10 @@
 			"type": "string",
 			"defaultValue": "https://ashutosh1632.dfs.core.windows.net/"
 		},
+		"GitLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
 		"LsAzureFunction_properties_typeProperties_functionAppUrl": {
 			"type": "string",
 			"defaultValue": "https://capstone-function-ashutosh.azurewebsites.net"
@@ -213,6 +217,8 @@
 					{
 						"name": "Get Orders Metadata",
 						"type": "GetMetadata",
+						"state": "Inactive",
+						"onInactiveMarkAs": "Succeeded",
 						"dependsOn": [],
 						"policy": {
 							"timeout": "0.12:00:00",
@@ -557,6 +563,21 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/GitLS')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('GitLS_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Link_Source_Container')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -641,16 +662,8 @@
 			"properties": {
 				"description": "When csv files with order's data are added in the blob, this trigger will execute the pipeline.",
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "pp_orders_copy_merge_delete_multiple_files",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
+				"runtimeState": "Stopped",
+				"pipelines": [],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
 					"blobPathBeginsWith": "/source/blobs/",
@@ -661,9 +674,7 @@
 					]
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pp_orders_copy_merge_delete_multiple_files')]"
-			]
+			"dependsOn": []
 		}
 	]
 }

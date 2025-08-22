@@ -27,6 +27,10 @@
 			"type": "string",
 			"defaultValue": "https://ashutosh1632.dfs.core.windows.net/"
 		},
+		"GitLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
 		"LsAzureFunction_properties_typeProperties_functionAppUrl": {
 			"type": "string",
 			"defaultValue": "https://capstone-function-ashutosh.azurewebsites.net"
@@ -88,6 +92,9 @@
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"GitLS_properties_typeProperties_url": {
+						"value": "[parameters('GitLS_properties_typeProperties_url')]"
 					},
 					"LsAzureFunction_properties_typeProperties_functionAppUrl": {
 						"value": "[parameters('LsAzureFunction_properties_typeProperties_functionAppUrl')]"
